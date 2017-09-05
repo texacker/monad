@@ -1,4 +1,4 @@
-# Notes on Monad
+# Note on Monad
 
 ##  References
 1. [Benjamin C. Pierce](http://www.cis.upenn.edu/~bcpierce/), _"Basic Category Theory for Computer Scientists"_, The MIT Press, 1st ed., 1991.
