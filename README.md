@@ -6,4 +6,4 @@
 1. Ernest Manes, _"[Algebraic Theories](http://www.springer.com/gp/book/9781461298625)"_, GTM 26, Springer-Verlag, 1976.
 1. R. F. C. Walters, _"[Categories and Computer Science](https://www.cambridge.org/core/books/categories-and-computer-science/203EBBEE29BEADB035C9DD80191E67B1)"_, Cambridge University Press, 1992.
 1. Richard Bird, Oege de Moor, _"The Algebra of Programming"_, Prentice Hall, 1997.
-1. Miran Lipovaca, _"Learn You a Haskell for Great Good! A Beginner's Guide"_, No Starch Press, 2011.
+1. Miran Lipovaca, _"[Learn You a Haskell for Great Good! A Beginner's Guide](http://learnyouahaskell.com/)"_, No Starch Press, 2011.
