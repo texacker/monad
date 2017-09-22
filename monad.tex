@@ -1,0 +1,131 @@
+%% Generate document:
+%%   bibtex monad && xelatex -src-specials monad
+\documentclass{article}
+
+%% Font Scheme:
+%\usepackage{ctex}          % CJK
+%\usepackage{mathptmx}      % mathptmx font
+%\usepackage{tgpagella}     % Palatino, text only
+\usepackage{mathpazo}       % Palatino, math & text
+
+\usepackage{amsmath,amsfonts,amssymb,amsbsy}
+\usepackage{amsthm}
+
+\usepackage{natbib}
+
+\input{../../include/usrdef}
+
+\begin{document}
+
+%\title{\textbf{Norm Minimization of Linear Matrix}}
+%\author{
+%Rao Fu \\[1em]
+%\small{\textit{Center for Systems and Control}} \\
+%\small{\textit{Department of Mechanics and Engineering Science}} \\
+%\small{\textit{Peking University, Beijing 100871, P.R.China}}
+%}
+
+%\title{\Huge{\textbf{LECTURE NOTES}} \\ \Huge{\textbf{ON}} \\ \Huge{\textbf{MATHEMATICS}} \\[1em] {Note on Monad}}
+
+\title{\textbf{Lecture Notes on Mathmatics} \\[1em] Note on Monad
+{\footnote{\texttt{Document No. 2017-09-22-001}}}
+{\footnote{\copyright \texttt{2017 - 2017 by texacker.org. All rights reserved.}}}
+}
+
+\author{%
+%\textit{texacker.org}
+\small{\textit{rao.fu}}\thanks{\texttt{http://www.texacker.org/\~{}furao}} \\ \small{\textit{texacker.org}}
+}
+\date{\today}
+
+\maketitle
+
+\section{Introduction}
+The problem to minimize the (spectral or maximum singular value) norm of $\norm{A}$
+can recast as an LMI problem:
+\begin{gather}
+%\label{equ:SDP.primal}
+\min \gamma \\
+s.t.\,\,
+\begin{bmatrix}
+\gamma I & A \\
+A^T      & \gamma I
+\end{bmatrix}
+\ge 0 \notag
+\end{gather}
+therefore the minimization of $\norm{P - P_0}$ with given $P_0$
+has the form:
+\begin{gather}
+%\label{equ:SDP.primal}
+\min \gamma \\
+s.t.\,\,
+\begin{bmatrix}
+\gamma I    & P - P_0 \\
+P^T - P_0^T & \gamma I
+\end{bmatrix}
+\ge 0 \notag
+\end{gather}
+
+My research interests mainly focus on the following areas:
+\begin{itemize}
+\item
+Convex optimization approach for structured singular value analysis and synthesis;
+\item
+Object-oriented parallel SDP algorithm and software for large-scale robust control;
+\item
+LMI-based absolute stabilization of uncertain nonlinear system (Lur'e system \& Pendulum-like System).
+\end{itemize}
+
+\section{Previous Research}
+\subsection{Convex optimization approach for large-scale SSV analysis and synthesis}
+It's well known that the structured singular value (SSV) method,
+which was introduced by {\citet{Doyle82A}} and {\citet{Safonov82}},
+is one of most effective approach to deal with robustness analysis and controller synthesis for systems
+subject to mixed un-modelled dynamic uncertainty and parametric uncertainty.
+However, except for some special cases, most of the currently available approaches for SSV analysis and synthesis require
+frequency sweeping which is computational costly and prone to erroneous answers
+when the SSV curve is discontinuous.
+Besides, the curve-fitting step involved in the synthesis procedure makes these methods computationally intractable.
+To overcome these drawbacks, some newly improved approaches were presented recently by using convex optimization approaches,
+such as {\citep{FuB95A}} and {\citep{ChenS98A}}.
+Comparing with the conventional frequency domain method,
+the convex optimization approaches are generally of a better numerical property
+by virtue of the interior-point polynomial time algorithms{\citep{NN94}} and require no frequency sweep.
+But unfortunately, none of these approaches is capable of solving large-scale SSV test
+since they are all exponentially complex.
+%the readily available convex optimization methods in literature,
+%such as that proposed by Chen and Sugie in 1998, are exponentially complex and therefore
+%unable to solve large-scale SSV analysis and synthesis problem.
+Moreover, most of the widely used numerical algorithms,
+such as the Projective Algorithm presented by {\citet{Projective}},
+are also incapable to handle large-scale convex optimization problems.
+
+Over the past few years, I have made several contributions in solving large-scale SSV analysis and synthesis
+using convex optimization method.
+By using S-procedure techniques, I have presented a new convex optimization-based
+approach for the large-scale mixed SSV analysis and synthesis problem.
+Based on the analysis of currently available methods when dealing with large-scale SSV analysis and synthesis problem,
+I derived a sufficient condition of the feasibility of robust LMI (Linear Matrix Inequality)
+by using S-procedure, and consequently, a less computational expensive SSV upper bound for
+a large-scale dynamic system was presented.
+The proposed approach {\citep{FYH03}} which is polynomial complex bases on state-space and requires no frequency sweeping.
+Based on this result, I also gave an LMI criterion for the existence of a full-state feedback SSV controller.
+
+\section{Current Research}
+\subsection{Object-oriented parallel SDP algorithm and software for large-scale robust control analysis and synthesis}
+Developed parallel-oriented algorithm for solving large-scale LMI (Linear Matrix Inequality)
+and migrated serial code to parallel environment (MPI) using object-oriented technique(C++ and Fortran95)
+with performance tuned for IBM RS/6000 SP3 architecture and Sun \& Linux cluster.
+
+Over the past few years, convex optimization, and semidefinite programming (SDP) in particular, have
+come to be recognized as valuable numerical tools for control system analysis and design.
+A number of publications can be found in the control literature that survey applications of
+SDP to the solution of system and control problems. In parallel, there has been considerable
+recent research on algorithms and software for the numerical solution of SDPs.
+%This interest was primarily motivated by applications of SDP in combinatorial
+%optimization but, more recently, also by the applications in control.
+
+\bibliographystyle{unsrt}
+\bibliography{../../bib/bib_art,../../bib/bib_book,../../bib/bib_cnf,../../bib/bib_man}
+
+\end{document}
