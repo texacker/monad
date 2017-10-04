@@ -1,7 +1,7 @@
 # Note on Monad
 
 ##  References
-1. [Universal Algebra for Logics](http://www.uni-log.org/joana.pdf)
+1. Joanna Grygiel, _[Universal Algebra for Logics](http://www.uni-log.org/joana.pdf)_.
 1. Anthony Voutas, _[The Basic Theory of Monads and Their Connection to Universal Algebra](http://courses.cecs.anu.edu.au/courses/CS_PROJECTS/12S1/Reports/Anthony_Voutas_Report.pdf)_.
 1. [Benjamin C. Pierce](http://www.cis.upenn.edu/~bcpierce/), _Basic Category Theory for Computer Scientists_, The MIT Press, 1991.
 1. [Steve Awodey](http://www.andrew.cmu.edu/user/awodey/), _Category Theory_, Oxford University Press, 2nd ed., 2010.
