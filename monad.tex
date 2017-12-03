@@ -77,9 +77,11 @@ LMI-based absolute stabilization of uncertain nonlinear system (Lur'e system \& 
 \end{itemize}
 
 \section{Functors, Natural Transformations and Adjoints}
+\subsection{Functors}
+
 \subsection{Natural Transformations}
 It's well known that the structured singular value (SSV) method,
-which was introduced by {\citet{Doyle82A}} and {\citet{Safonov82}},
+which was introduced by {\citet{PBC91}} and {\citet{Safonov82}},
 is one of most effective approach to deal with robustness analysis and controller synthesis for systems
 subject to mixed un-modelled dynamic uncertainty and parametric uncertainty.
 However, except for some special cases, most of the currently available approaches for SSV analysis and synthesis require
@@ -111,8 +113,12 @@ a large-scale dynamic system was presented.
 The proposed approach {\citep{FYH03}} which is polynomial complex bases on state-space and requires no frequency sweeping.
 Based on this result, I also gave an LMI criterion for the existence of a full-state feedback SSV controller.
 
+\subsection{Adjoints}
+
 \section{Monad}
-\subsection{Object-oriented parallel SDP algorithm and software for large-scale robust control analysis and synthesis}
+\subsection{Monad}
+
+\subsection{Eilenberg-Moore Category}
 Developed parallel-oriented algorithm for solving large-scale LMI (Linear Matrix Inequality)
 and migrated serial code to parallel environment (MPI) using object-oriented technique(C++ and Fortran95)
 with performance tuned for IBM RS/6000 SP3 architecture and Sun \& Linux cluster.
