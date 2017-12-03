@@ -1,4 +1,4 @@
-# Note on Monad
+# Notes on Monad
 
 ##  References
 1. Joanna Grygiel, _[Universal Algebra for Logics](http://www.uni-log.org/joana.pdf)_.
