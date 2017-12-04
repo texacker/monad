@@ -10,11 +10,13 @@
 
 \usepackage{amsmath,amsfonts,amssymb,amsbsy}
 \usepackage{amsthm}
+\usepackage{tikz-cd}
 
 \usepackage{natbib}
 
 \input{../../include/usrdef}
 
+%\usetikzlibrary{matrix}
 \begin{document}
 
 %\title{\textbf{Norm Minimization of Linear Matrix}}
@@ -41,6 +43,7 @@
 \maketitle
 
 \section{Basic Constructions}
+\subsection{Categories}
 The problem to minimize the (spectral or maximum singular value) norm of $\norm{A}$
 can recast as an LMI problem:
 \begin{gather}
@@ -76,12 +79,14 @@ Object-oriented parallel SDP algorithm and software for large-scale robust contr
 LMI-based absolute stabilization of uncertain nonlinear system (Lur'e system \& Pendulum-like System).
 \end{itemize}
 
-\section{Functors, Natural Transformations and Adjoints}
+\section{Functors and Natural Transformations}
 \subsection{Functors}
+
+\subsection{F-Algebras}
 
 \subsection{Natural Transformations}
 It's well known that the structured singular value (SSV) method,
-which was introduced by {\citet{PBC91}} and {\citet{Safonov82}},
+which was introduced by {\citet{PBC91}} and {\citet{AS10}},
 is one of most effective approach to deal with robustness analysis and controller synthesis for systems
 subject to mixed un-modelled dynamic uncertainty and parametric uncertainty.
 However, except for some special cases, most of the currently available approaches for SSV analysis and synthesis require
@@ -89,10 +94,10 @@ frequency sweeping which is computational costly and prone to erroneous answers
 when the SSV curve is discontinuous.
 Besides, the curve-fitting step involved in the synthesis procedure makes these methods computationally intractable.
 To overcome these drawbacks, some newly improved approaches were presented recently by using convex optimization approaches,
-such as {\citep{FuB95A}} and {\citep{ChenS98A}}.
+such as {\citep{BirddeMoor96:Algebra}} and {\citep{AV12}}.
 Comparing with the conventional frequency domain method,
 the convex optimization approaches are generally of a better numerical property
-by virtue of the interior-point polynomial time algorithms{\citep{NN94}} and require no frequency sweep.
+by virtue of the interior-point polynomial time algorithms{\citep{AM75}} and require no frequency sweep.
 But unfortunately, none of these approaches is capable of solving large-scale SSV test
 since they are all exponentially complex.
 %the readily available convex optimization methods in literature,
@@ -113,25 +118,37 @@ a large-scale dynamic system was presented.
 The proposed approach {\citep{FYH03}} which is polynomial complex bases on state-space and requires no frequency sweeping.
 Based on this result, I also gave an LMI criterion for the existence of a full-state feedback SSV controller.
 
+\section{Adjoints, Monads and Algebras}
 \subsection{Adjoints}
 
-\section{Monad}
-\subsection{Monad}
+\subsection{Monads}
 
 \subsection{Eilenberg-Moore Category}
-Developed parallel-oriented algorithm for solving large-scale LMI (Linear Matrix Inequality)
-and migrated serial code to parallel environment (MPI) using object-oriented technique(C++ and Fortran95)
-with performance tuned for IBM RS/6000 SP3 architecture and Sun \& Linux cluster.
+%\begin{tikzpicture}
+%  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+%  {
+%     F_t(x) & F(x) \\
+%     A_t & A \\};
+%  \path[-stealth]
+%    (m-1-1) edge node [left] {$\mathcal{B}_X$} (m-2-1)
+%            edge [double] node [below] {$\mathcal{B}_t$} (m-1-2)
+%    (m-2-1.east|-m-2-2) edge node [below] {$\mathcal{B}_T$}
+%            node [above] {$\exists$} (m-2-2)
+%    (m-1-2) edge node [right] {$\mathcal{B}_T$} (m-2-2)
+%            edge [dashed,-] (m-2-1);
+%\end{tikzpicture}
 
-Over the past few years, convex optimization, and semidefinite programming (SDP) in particular, have
-come to be recognized as valuable numerical tools for control system analysis and design.
-A number of publications can be found in the control literature that survey applications of
-SDP to the solution of system and control problems. In parallel, there has been considerable
-recent research on algorithms and software for the numerical solution of SDPs.
-%This interest was primarily motivated by applications of SDP in combinatorial
-%optimization but, more recently, also by the applications in control.
+\[
+\begin{tikzcd}
+A\arrow[bend left]{r}\arrow[bend right]{r}&B
+\end{tikzcd}
+\]
+
+\subsection{Kleisli Category}
+
+\subsection{Kleisli Triples}
 
 \bibliographystyle{unsrt}
-\bibliography{../../bib/bib_art,../../bib/bib_book,../../bib/bib_cnf,../../bib/bib_man}
+\bibliography{../../bib/bib_art,../../bib/bib_book,../../bib/bib_cnf,../../bib/bib_man,../../bib/bib_tech}
 
 \end{document}
