@@ -82,8 +82,6 @@ LMI-based absolute stabilization of uncertain nonlinear system (Lur'e system \& 
 \section{Functors and Natural Transformations}
 \subsection{Functors}
 
-\subsection{F-Algebras}
-
 \subsection{Natural Transformations}
 It's well known that the structured singular value (SSV) method,
 which was introduced by {\citet{PBC91}} and {\citet{AS10}},
@@ -118,12 +116,15 @@ a large-scale dynamic system was presented.
 The proposed approach {\citep{FYH03}} which is polynomial complex bases on state-space and requires no frequency sweeping.
 Based on this result, I also gave an LMI criterion for the existence of a full-state feedback SSV controller.
 
-\section{Adjoints, Monads and Algebras}
+\section{Adjoints and Monads}
+
 \subsection{Adjoints}
 
 \subsection{Monads}
 
-\subsection{Eilenberg-Moore Category}
+\subsubsection{F-Algebras}
+
+\subsubsection{Eilenberg-Moore Category}
 %\begin{tikzpicture}
 %  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
 %  {
@@ -144,9 +145,35 @@ A\arrow[bend left]{r}\arrow[bend right]{r}&B
 \end{tikzcd}
 \]
 
-\subsection{Kleisli Category}
+\subsubsection{Kleisli Category}
 
-\subsection{Kleisli Triples}
+\subsubsection{Kleisli Triples}
+
+%\appendix
+\section{Algebras}
+\subsection{Free Algebras}
+
+%  如果有一个 Monad (T, \mu, \eta)，则可得到
+%  1. 一个 \emph{$T$-Algebra Category} $C^{T}$ (其每个 objects 是 $T$-Algebra)
+%  2. 一对 Adjoints（即存在 unit, counit）
+
+%2017-12-06
+%  说一个 functor T 是一个 monad，意味着这个 functor T 可以任意类型（表达式）A 为基
+%  构造出一个新类型（表达式）TA，并且：
+
+%  1. 这个新类型（表达式）TA 与原来类型（表达式）A 保持某种结构相似性（\eta），
+%  2. 同时这个新类型（表达式）TA 上还具有某种“代数”运算（\mu）
+
+%  同时 \mu, \eta 还是相容的。
+
+%2017-12-07
+%  free algebra 无求值函数，定义求值函数的为 varieties。
+
+%  Monad means an algebraic theory ?
+
+%2017-12-09
+%  \mu, \eta 的形式是成为一个 algebra 的充要条件，
+%  而 \mu, \eta 的具体定义则决定了是一个什么样的 algebra？
 
 \bibliographystyle{unsrt}
 \bibliography{../../bib/bib_art,../../bib/bib_book,../../bib/bib_cnf,../../bib/bib_man,../../bib/bib_tech}
