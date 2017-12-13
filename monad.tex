@@ -15,6 +15,7 @@
 \usepackage{natbib}
 
 \input{../../include/usrdef}
+\input{../../include/thmenv_e}
 
 %\usetikzlibrary{matrix}
 \begin{document}
@@ -44,8 +45,27 @@
 
 \section{Basic Constructions}
 \subsection{Categories}
-The problem to minimize the (spectral or maximum singular value) norm of $\norm{A}$
-can recast as an LMI problem:
+\begin{defn}
+%\label{defn:63}
+A category consists of the following data:
+\begin{itemize}
+\item
+Objects: $A,B,C,\dotsc$
+\item
+Arrows: $f,g,h,\dotsc$
+\item
+For each arrow $f$, there are given objects
+\[
+dom(f),\quad cod(f)
+\]
+called the $domain$ and $codomain$ of $f$. We write
+\[
+f: A \rightarrow B
+\]
+to indicate that $A = dom(f)$ and $B = cod(f)$.
+\end{itemize}
+\end{defn}
+
 \begin{gather}
 %\label{equ:SDP.primal}
 \min \gamma \\
@@ -68,16 +88,6 @@ P^T - P_0^T & \gamma I
 \end{bmatrix}
 \ge 0 \notag
 \end{gather}
-
-My research interests mainly focus on the following areas:
-\begin{itemize}
-\item
-Convex optimization approach for structured singular value analysis and synthesis;
-\item
-Object-oriented parallel SDP algorithm and software for large-scale robust control;
-\item
-LMI-based absolute stabilization of uncertain nonlinear system (Lur'e system \& Pendulum-like System).
-\end{itemize}
 
 \section{Functors and Natural Transformations}
 \subsection{Functors}
