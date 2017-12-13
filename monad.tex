@@ -29,7 +29,7 @@
 
 %\title{\Huge{\textbf{LECTURE NOTES}} \\ \Huge{\textbf{ON}} \\ \Huge{\textbf{MATHEMATICS}} \\[1em] {Note on Monad}}
 
-\title{\textbf{Lecture Notes on Mathmatics} \\[1em] Notes on Monad
+\title{\textbf{Lecture Notes on Mathmatics} \\[1em] What the Hell is Monad ?
 {\footnote{\texttt{Document No. 2017-09-22-001}}}
 {\footnote{\copyright \texttt{2017 - 2017 by texacker.org. All rights reserved.}}}
 }
@@ -113,16 +113,20 @@ Based on the analysis of currently available methods when dealing with large-sca
 I derived a sufficient condition of the feasibility of robust LMI (Linear Matrix Inequality)
 by using S-procedure, and consequently, a less computational expensive SSV upper bound for
 a large-scale dynamic system was presented.
-The proposed approach {\citep{FYH03}} which is polynomial complex bases on state-space and requires no frequency sweeping.
-Based on this result, I also gave an LMI criterion for the existence of a full-state feedback SSV controller.
+The proposed approach {\citep{BGM15}} which is polynomial complex bases on state-space and requires no frequency sweeping.
+Based on this result, I also gave an LMI criterion for the existence of a full-state feedback SSV controller{\citep{RDE85}}.
 
 \section{Adjoints and Monads}
 
+\subsection{Freeness}
+
 \subsection{Adjoints}
+
+\subsection{Adjunctions}
 
 \subsection{Monads}
 
-\subsubsection{F-Algebras}
+%\subsubsection{F-Algebras}
 
 \subsubsection{Eilenberg-Moore Category}
 %\begin{tikzpicture}
@@ -145,14 +149,14 @@ A\arrow[bend left]{r}\arrow[bend right]{r}&B
 \end{tikzcd}
 \]
 
-\subsubsection{Kleisli Category}
-
-\subsubsection{Kleisli Triples}
+\subsubsection{Kleisli Category and Kleisli Triples}
 
 %\appendix
-\section{Algebras of Monad}
-\subsection{Free Algebra}
+%\section{Algebras of Monad}
+%\subsection{Free Algebra}
 
+%  Revision Log:
+%
 %  如果有一个 Monad (T, \mu, \eta)，则可得到
 %  1. 一个 \emph{$T$-Algebra Category} $C^{T}$ (其每个 objects 是 $T$-Algebra)
 %  2. 一对 Adjoints（即存在 unit, counit）
@@ -173,7 +177,9 @@ A\arrow[bend left]{r}\arrow[bend right]{r}&B
 
 %2017-12-09
 %  \mu, \eta 的形式是成为一个 algebra 的充要条件，
-%  而 \mu, \eta 的具体定义则决定了是一个什么样的 algebra？
+%  而 \mu, \eta 的具体定义则决定了是一个什么样的 algebra：
+%  1. \eta : it's free, and there is an unambiguous way of inclusion of generators
+%  2. \mu  : an unambiguous way of evaluation
 
 \bibliographystyle{unsrt}
 \bibliography{../../bib/bib_art,../../bib/bib_book,../../bib/bib_cnf,../../bib/bib_man,../../bib/bib_tech}
