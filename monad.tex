@@ -43,9 +43,9 @@
 
 \maketitle
 
-\section{Basic Constructions}
+\section{Categories}
 \subsection{Categories}
-\begin{defn}
+\begin{defn}[{\cite{AS10}}]
 %\label{defn:63}
 A category consists of the following data:
 \begin{itemize}
@@ -58,41 +58,182 @@ For each arrow $f$, there are given objects
 \[
 dom(f),\quad cod(f)
 \]
-called the $domain$ and $codomain$ of $f$. We write
+called the \emph{domain} and \emph{codomain} of $f$. We write
 \[
 f: A \rightarrow B
 \]
 to indicate that $A = dom(f)$ and $B = cod(f)$.
+\item
+Given arrows $f: A \rightarrow B$ and $g: B \rightarrow C$, that is, with
+\[
+dom(f) = cod(g)
+\]
+there is given an arrow
+\[
+g \circ f: A \rightarrow C
+\]
+called the \emph{composite} of $f$ and $g$.
+\item
+For each object $A$, there is given an arrow
+\[
+1_{A}: A \rightarrow A
+\]
+called the \emph{identity} arrow of $A$.
+\end{itemize}
+These data are required to satisfy the following laws:
+\begin{itemize}
+\item
+Associativity:
+\[
+h \circ ( g \circ f ) = ( h \circ g ) \circ f
+\]
+for all $f : A \rightarrow B$, $g : B \rightarrow C$, $h : C \rightarrow D$.
+\item
+Unit:
+\[
+f \circ 1_{A} = f = 1_{B} \circ f
+\]
+for all $f : A \rightarrow B$.
 \end{itemize}
 \end{defn}
 
-\begin{gather}
-%\label{equ:SDP.primal}
-\min \gamma \\
-s.t.\,\,
-\begin{bmatrix}
-\gamma I & A \\
-A^T      & \gamma I
-\end{bmatrix}
-\ge 0 \notag
-\end{gather}
-therefore the minimization of $\norm{P - P_0}$ with given $P_0$
-has the form:
-\begin{gather}
-%\label{equ:SDP.primal}
-\min \gamma \\
-s.t.\,\,
-\begin{bmatrix}
-\gamma I    & P - P_0 \\
-P^T - P_0^T & \gamma I
-\end{bmatrix}
-\ge 0 \notag
-\end{gather}
+%\begin{gather}
+%%\label{equ:SDP.primal}
+%\min \gamma \\
+%s.t.\,\,
+%\begin{bmatrix}
+%\gamma I & A \\
+%A^T      & \gamma I
+%\end{bmatrix}
+%\ge 0 \notag
+%\end{gather}
+%therefore the minimization of $\norm{P - P_0}$ with given $P_0$
+%has the form:
+%\begin{gather}
+%%\label{equ:SDP.primal}
+%\min \gamma \\
+%s.t.\,\,
+%\begin{bmatrix}
+%\gamma I    & P - P_0 \\
+%P^T - P_0^T & \gamma I
+%\end{bmatrix}
+%\ge 0 \notag
+%\end{gather}
 
-\section{Functors and Natural Transformations}
 \subsection{Functors}
+\begin{defn}[{\cite{AS10}}]
+A functor
+\[
+F: \mathbf{C} \rightarrow \mathbf{D}
+\]
+between categories $\mathbf{C}$ and $\mathbf{D}$ is a mapping of objects to objects and arrows to arrows,
+in such a way that
+\begin{enumerate}
+\item
+\[
+F(f:A \rightarrow B) = F(f):F(A) \rightarrow F(B)
+\]
+\item
+\[
+F(1_{A}) = 1_{F(A)}
+\]
+\item
+\[
+F(f \circ g) = F(f) \circ F(g)
+\]
+\end{enumerate}
+That is, $F$ preserves \emph{domain}s and \emph{codomain}s, \emph{identity} arrows, and \emph{compostion}.
+\end{defn}
 
+\section{Naturality}
 \subsection{Natural Transformations}
+\begin{defn}[{\cite{AS10}}]
+For categories $\mathbf{C}$, $\mathbf{D}$ and functors
+\[
+F,G: \mathbf{C} \rightarrow \mathbf{D}
+\]
+a \emph{natural transformation} $\vartheta: F \rightarrow G$ is a family of arrows in $\mathbf{D}$
+\[
+(\vartheta_{C}: FC \rightarrow GC)_{C \in \mathbf{C_0}}
+\]
+such that, for any $f: C \rightarrow C'$ in $\mathbf{C}$, one has
+\[
+\vartheta_{C'} \circ F(f) = G(f) \circ \vartheta_{C}
+\]
+that is, the following commutes:
+%\[
+%\begin{tikzcd}
+%A\arrow[bend left]{r}\arrow[bend right]{r}&B
+%\end{tikzcd}
+%\]
+\[
+\begin{tikzcd}
+FC \arrow[r, "\vartheta_{C}"] \arrow[d, "Ff"'] & GC \arrow[d, "Gf"] \\
+FC' \arrow[r, "\vartheta_{C'}"] & GC'
+\end{tikzcd}
+\]
+\end{defn}
+
+\section{Adjoints}
+
+\subsection{Freeness}
+\begin{exam}[{\cite{AM75}}]
+The monoid $A=(X^{*}, conc, \Lambda)$
+\end{exam}
+
+\begin{lem}[{\cite{AM75}}]
+A monoid $A$
+\end{lem}
+
+\begin{defn}[{\cite{AM75}}]
+Let $G: \mathbf{A} \rightarrow \mathbf{B}$ be any functors, and $B$ an object of $\mathbf{B}$.
+We say the pair $(A, \eta)$, where $A$ is an object of $\mathbf{A}$ and $\eta: B \rightarrow GA$ is a morphism of $B$,
+is \emph{free over $B$ with respect to $G$} just in case $\eta: B \rightarrow GA$ has the couniversal property that
+given any morphism $f: B \rightarrow GA'$ with $A'$ any object of $A$,
+there exists a unique $\mathbf{A}$-morphism $\psi: A \rightarrow A'$ such that
+\[
+\begin{tikzcd}
+B \arrow[r, "\eta"] \arrow[rd, "f"'] & GA \arrow[d, dashrightarrow, "G\psi"] \\
+                                     & GA'
+\end{tikzcd}
+\qquad
+\begin{tikzcd}
+A \arrow[d, dashrightarrow, "\psi"] \\
+A'
+\end{tikzcd}
+\]
+\end{defn}
+
+\subsection{Adjoints}
+
+\subsection{Adjunctions}
+
+\section{Monads}
+
+\subsection{Monads}
+
+%\subsubsection{F-Algebras}
+
+\subsection{Eilenberg-Moore Category}
+%\begin{tikzpicture}
+%  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+%  {
+%     F_t(x) & F(x) \\
+%     A_t & A \\};
+%  \path[-stealth]
+%    (m-1-1) edge node [left] {$\mathcal{B}_X$} (m-2-1)
+%            edge [double] node [below] {$\mathcal{B}_t$} (m-1-2)
+%    (m-2-1.east|-m-2-2) edge node [below] {$\mathcal{B}_T$}
+%            node [above] {$\exists$} (m-2-2)
+%    (m-1-2) edge node [right] {$\mathcal{B}_T$} (m-2-2)
+%            edge [dashed,-] (m-2-1);
+%\end{tikzpicture}
+
+\subsection{Kleisli Category and Kleisli Triples}
+
+\appendix
+\section{Algebraic Theories}
+%\subsection{Free Algebra}
 It's well known that the structured singular value (SSV) method,
 which was introduced by {\citet{PBC91}} and {\citet{AS10}},
 is one of most effective approach to deal with robustness analysis and controller synthesis for systems
@@ -126,44 +267,6 @@ a large-scale dynamic system was presented.
 The proposed approach {\citep{BGM15}} which is polynomial complex bases on state-space and requires no frequency sweeping.
 Based on this result, I also gave an LMI criterion for the existence of a full-state feedback SSV controller{\citep{RDE85}}.
 
-\section{Adjoints and Monads}
-
-\subsection{Freeness}
-
-\subsection{Adjoints}
-
-\subsection{Adjunctions}
-
-\subsection{Monads}
-
-%\subsubsection{F-Algebras}
-
-\subsubsection{Eilenberg-Moore Category}
-%\begin{tikzpicture}
-%  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
-%  {
-%     F_t(x) & F(x) \\
-%     A_t & A \\};
-%  \path[-stealth]
-%    (m-1-1) edge node [left] {$\mathcal{B}_X$} (m-2-1)
-%            edge [double] node [below] {$\mathcal{B}_t$} (m-1-2)
-%    (m-2-1.east|-m-2-2) edge node [below] {$\mathcal{B}_T$}
-%            node [above] {$\exists$} (m-2-2)
-%    (m-1-2) edge node [right] {$\mathcal{B}_T$} (m-2-2)
-%            edge [dashed,-] (m-2-1);
-%\end{tikzpicture}
-
-\[
-\begin{tikzcd}
-A\arrow[bend left]{r}\arrow[bend right]{r}&B
-\end{tikzcd}
-\]
-
-\subsubsection{Kleisli Category and Kleisli Triples}
-
-%\appendix
-%\section{Algebras of Monad}
-%\subsection{Free Algebra}
 
 %  Revision Log:
 %
@@ -191,7 +294,7 @@ A\arrow[bend left]{r}\arrow[bend right]{r}&B
 %  1. \eta : it's free, and there is an unambiguous way of inclusion of generators
 %  2. \mu  : an unambiguous way of evaluation
 
-\bibliographystyle{unsrt}
+\bibliographystyle{unsrtnat}
 \bibliography{../../bib/bib_art,../../bib/bib_book,../../bib/bib_cnf,../../bib/bib_man,../../bib/bib_tech}
 
 \end{document}
