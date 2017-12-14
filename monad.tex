@@ -154,11 +154,11 @@ F,G: \mathbf{C} \rightarrow \mathbf{D}
 \]
 a \emph{natural transformation} $\vartheta: F \rightarrow G$ is a family of arrows in $\mathbf{D}$
 \[
-(\vartheta_{C}: FC \rightarrow GC)_{C \in \mathbf{C_0}}
+(\vartheta_{A}: FA \rightarrow GA)_{A \in \mathbf{C_0}}
 \]
-such that, for any $f: C \rightarrow C'$ in $\mathbf{C}$, one has
+such that, for any $f: A \rightarrow A'$ in $\mathbf{C}$, one has
 \[
-\vartheta_{C'} \circ F(f) = G(f) \circ \vartheta_{C}
+\vartheta_{A'} \circ F(f) = G(f) \circ \vartheta_{A}
 \]
 that is, the following commutes:
 %\[
@@ -168,8 +168,8 @@ that is, the following commutes:
 %\]
 \[
 \begin{tikzcd}
-FC \arrow[r, "\vartheta_{C}"] \arrow[d, "Ff"'] & GC \arrow[d, "Gf"] \\
-FC' \arrow[r, "\vartheta_{C'}"] & GC'
+FA \arrow[r, "\vartheta_{A}"] \arrow[d, "Ff"'] & GA \arrow[d, "Gf"] \\
+FA' \arrow[r, "\vartheta_{A'}"] & GA'
 \end{tikzcd}
 \]
 \end{defn}
