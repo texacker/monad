@@ -12,7 +12,7 @@
 \usepackage{amsthm}
 \usepackage{tikz-cd}
 
-\usepackage{natbib}
+\usepackage[numbers]{natbib}
 
 \input{../../include/usrdef}
 \input{../../include/thmenv_e}
@@ -167,9 +167,9 @@ that is, the following commutes:
 %\end{tikzcd}
 %\]
 \[
-\begin{tikzcd}
+\begin{tikzcd}[row sep=huge, column sep=huge]
 FA \arrow[r, "\vartheta_{A}"] \arrow[d, "Ff"'] & GA \arrow[d, "Gf"] \\
-FA' \arrow[r, "\vartheta_{A'}"] & GA'
+FA' \arrow[r, "\vartheta_{A'}"]                & GA'
 \end{tikzcd}
 \]
 \end{defn}
@@ -185,19 +185,19 @@ The monoid $A=(X^{*}, conc, \Lambda)$
 A monoid $A$
 \end{lem}
 
-\begin{defn}[{\cite{AM75}}]
+\begin{defn}[\cite{AM75}, Definition~7.2.4]
 Let $G: \mathbf{A} \rightarrow \mathbf{B}$ be any functors, and $B$ an object of $\mathbf{B}$.
 We say the pair $(A, \eta)$, where $A$ is an object of $\mathbf{A}$ and $\eta: B \rightarrow GA$ is a morphism of $B$,
 is \emph{free over $B$ with respect to $G$} just in case $\eta: B \rightarrow GA$ has the couniversal property that
 given any morphism $f: B \rightarrow GA'$ with $A'$ any object of $A$,
 there exists a unique $\mathbf{A}$-morphism $\psi: A \rightarrow A'$ such that
 \[
-\begin{tikzcd}
+\begin{tikzcd}[row sep=huge, column sep=huge]
 B \arrow[r, "\eta"] \arrow[rd, "f"'] & GA \arrow[d, dashrightarrow, "G\psi"] \\
                                      & GA'
 \end{tikzcd}
 \qquad
-\begin{tikzcd}
+\begin{tikzcd}[row sep=huge, column sep=huge]
 A \arrow[d, dashrightarrow, "\psi"] \\
 A'
 \end{tikzcd}
@@ -229,11 +229,35 @@ A'
 %            edge [dashed,-] (m-2-1);
 %\end{tikzpicture}
 
-\subsection{Kleisli Category and Kleisli Triples}
+\[
+\begin{tikzpicture}[baseline= (a).base]
+\node[scale=1.2] (a) at (0,0){
+\begin{tikzcd}
+B \arrow[r, "\eta"] \arrow[rd, "f"'] & GA \arrow[d, dashrightarrow, "G\psi"] \\
+                                     & GA'
+\end{tikzcd}
+};
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}[baseline= (a).base]
+\node[scale=1.2] (a) at (0,0){
+\begin{tikzcd}
+A \arrow[d, dashrightarrow, "\psi"] \\
+A'
+\end{tikzcd}
+};
+\end{tikzpicture}
+\]
 
-\appendix
+\subsection{Kleisli Category}
+
+%\appendix
 \section{Algebraic Theories}
 %\subsection{Free Algebra}
+
+\section{Monad in Haskell}
+\subsection{Kleisli Triples}
+
 It's well known that the structured singular value (SSV) method,
 which was introduced by {\citet{PBC91}} and {\citet{AS10}},
 is one of most effective approach to deal with robustness analysis and controller synthesis for systems
@@ -264,9 +288,8 @@ Based on the analysis of currently available methods when dealing with large-sca
 I derived a sufficient condition of the feasibility of robust LMI (Linear Matrix Inequality)
 by using S-procedure, and consequently, a less computational expensive SSV upper bound for
 a large-scale dynamic system was presented.
-The proposed approach {\citep{BGM15}} which is polynomial complex bases on state-space and requires no frequency sweeping.
+The proposed approach {\citep{BGM15}} which is polynomial complex bases on state-space and requires no frequency sweeping{\citep{MEG76}}.
 Based on this result, I also gave an LMI criterion for the existence of a full-state feedback SSV controller{\citep{RDE85}}.
-
 
 %  Revision Log:
 %
@@ -295,6 +318,6 @@ Based on this result, I also gave an LMI criterion for the existence of a full-s
 %  2. \mu  : an unambiguous way of evaluation
 
 \bibliographystyle{unsrtnat}
-\bibliography{../../bib/bib_art,../../bib/bib_book,../../bib/bib_cnf,../../bib/bib_man,../../bib/bib_tech}
+\bibliography{../../bib/bib_art,../../bib/bib_book,../../bib/bib_cnf,../../bib/bib_man,../../bib/bib_tech,../../bib/bib_proc}
 
 \end{document}
