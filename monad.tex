@@ -209,6 +209,10 @@ A'
 \subsection{Adjunctions}
 
 \section{Monads}
+Examples which show that the $T$-algebra for familiar monads are the familiar algebras:
+\begin{exam}[{\cite{MLS98}}, chap.~6.2 and 6.4]
+Group actions:
+\end{exam}
 
 \subsection{Monads}
 
@@ -229,32 +233,35 @@ A'
 %            edge [dashed,-] (m-2-1);
 %\end{tikzpicture}
 
-\[
-\begin{tikzpicture}[baseline= (a).base]
-\node[scale=1.2] (a) at (0,0){
-\begin{tikzcd}
-B \arrow[r, "\eta"] \arrow[rd, "f"'] & GA \arrow[d, dashrightarrow, "G\psi"] \\
-                                     & GA'
-\end{tikzcd}
-};
-\end{tikzpicture}
-\qquad
-\begin{tikzpicture}[baseline= (a).base]
-\node[scale=1.2] (a) at (0,0){
-\begin{tikzcd}
-A \arrow[d, dashrightarrow, "\psi"] \\
-A'
-\end{tikzcd}
-};
-\end{tikzpicture}
-\]
+%\[
+%\begin{tikzpicture}[baseline= (a).base]
+%\node[scale=1.2] (a) at (0,0){
+%\begin{tikzcd}
+%B \arrow[r, "\eta"] \arrow[rd, "f"'] & GA \arrow[d, dashrightarrow, "G\psi"] \\
+%                                     & GA'
+%\end{tikzcd}
+%};
+%\end{tikzpicture}
+%\qquad
+%\begin{tikzpicture}[baseline= (a).base]
+%\node[scale=1.2] (a) at (0,0){
+%\begin{tikzcd}
+%A \arrow[d, dashrightarrow, "\psi"] \\
+%A'
+%\end{tikzcd}
+%};
+%\end{tikzpicture}
+%\]
 
 \subsection{Kleisli Category}
 
-%\appendix
 \section{Algebraic Theories}
 %\subsection{Free Algebra}
+The aim of this part is to explain
+how finitary monads for $K = \mathbf{Set}$ precisely yield one-sorted algebraic theories,
+and for $K = \mathbf{Set}^S$, the $S$-sorted ones{\cite{ARV10}}.
 
+\appendix
 \section{Monad in Haskell}
 \subsection{Kleisli Triples}
 
